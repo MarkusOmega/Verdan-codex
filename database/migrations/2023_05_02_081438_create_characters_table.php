@@ -14,6 +14,20 @@ return new class extends Migration
         Schema::create('characters', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string("name");
+            $table->integer("level");
+            $table->integer("hitpoints");
+
+            $table->integer("strength");
+            $table->integer("dexterity");
+            $table->integer("constitution");
+            $table->integer("intelligence");
+            $table->integer("wisdom");
+            $table->integer("charisma");
+
+            $table->unsignedBigInteger('profession_id');
+
+            $table->foreign('profession_id')->references('id')->on('characters');
         });
     }
 

@@ -12,7 +12,13 @@ class CharacterController extends Controller
      */
     public function index()
     {
-        //
+        $character = character::find(1);	
+        
+        //$professionIds = [1, 2];
+        //$character->professions()->attach($professionIds);
+        
+        dd($character->professions);
+        //return view('agenda', ['name' => 'agenda' ,'user_tasks' => $user_tasks, 'damage_form' => $damage_form_car, 'user_id' => $user_id, 'brands' => $brands, 'points' => $points, 'points_connection' => $points_connection, 'task_user_name' => $task_user_name, 'todays_date' => $todays_date]);
     }
 
     /**
