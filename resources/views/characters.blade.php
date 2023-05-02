@@ -12,7 +12,7 @@
                     <div class="professions">
                         Classes: 
                         @foreach ($character->professions as $profession)
-                                {{ $profession->name }},
+                            {{ $profession->name }},
                         @endforeach    
                     </div>
                 </div>
