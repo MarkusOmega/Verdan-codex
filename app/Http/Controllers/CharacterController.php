@@ -12,13 +12,28 @@ class CharacterController extends Controller
      */
     public function index()
     {
-        $character = character::find(1);	
+
+        $user = auth()->user();
+        //$character = character::find(1);	
+
+        //# add character to the current user
+        //$user->characters()->save($character);
         
+        
+        
+        //$user->characters()->attach([1]);
+        //dd($user->characters);
         //$professionIds = [1, 2];
+        // #add professions to a character (many to many)
         //$character->professions()->attach($professionIds);
-        
-        dd($character->professions);
-        //return view('agenda', ['name' => 'agenda' ,'user_tasks' => $user_tasks, 'damage_form' => $damage_form_car, 'user_id' => $user_id, 'brands' => $brands, 'points' => $points, 'points_connection' => $points_connection, 'task_user_name' => $task_user_name, 'todays_date' => $todays_date]);
+       
+        //dd($character->professions);
+        if($user->characters()->exists()){
+            return view('characters', ['characters' => $user->characters]);
+        }
+        else{
+            return view('empty', ['type' => 'Characters']);            
+        }
     }
 
     /**
