@@ -55,7 +55,7 @@ class CharacterController extends Controller
      */
     public function show(character $character)
     {
-        //
+        return view('characters.show_character');
     }
 
     /**
