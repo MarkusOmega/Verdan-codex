@@ -18,9 +18,7 @@ class CharacterController extends Controller
 
         //# add character to the current user
         //$user->characters()->save($character);
-        
-        
-        
+    
         //$user->characters()->attach([1]);
         //dd($user->characters);
         //$professionIds = [1, 2];
