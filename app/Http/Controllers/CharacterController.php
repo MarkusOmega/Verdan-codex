@@ -55,7 +55,15 @@ class CharacterController extends Controller
      */
     public function show(character $character)
     {
-        return view('characters.show_character');
+        $user = auth()->user();
+        $exists = $user->characters->contains($character->id);
+ 
+        if($exists){
+            return view('characters.show_character');
+        }
+        else{
+            return redirect()->action([CharacterController::class, 'index']);
+        }
     }
 
     /**
