@@ -12,9 +12,11 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
+                    @foreach(config('backend.menu') as $menuItemName => $menuItemRoute)
+                        <x-nav-link :href="route($menuItemRoute)" :active="request()->routeIs($menuItemRoute)">
+                            {{ __($menuItemName) }}
+                        </x-nav-link>
+                   @endforeach
                 </div>
             </div>
 
