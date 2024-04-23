@@ -21,4 +21,5 @@ yarn-error.log
 /.vscode
 
 docker-compose.yml
+supervisord.log
 
