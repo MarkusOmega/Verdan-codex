@@ -12,9 +12,11 @@ class UserController extends Controller
 {
     public function index()
     {
-        $role = Role::where('name', 'superadmin')->first();
-
-        dd($role->permissions);
+//        $role = Role::where('name', 'superadmin')->first();
+//
+//        $role->givePermissionTo('edit_user');
+//
+//        dd($role->permissions);
 
         $users = User::all();
 

@@ -12,7 +12,7 @@ Route::get('/dashboard', function () {
     return view('admin.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['can:edit_user'])->group(function () {
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
 });
 
