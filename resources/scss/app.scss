@@ -1,5 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "buttons";
 
 
 .table-w100{
     width: 100%;
+    thead{
+        border-bottom: 1px solid black;
+        th{
+            padding: 10px;
+        }
+    }
+    tbody{
+        tr{
+           td{
+               padding: 10px;
+           }
+        }
+    }
+
+    &.striped{
+        tbody{
+            tr:nth-child(even){
+                td{
+                    background-color: #e7eaee;
+                }
+            }
+        }
+    }
 }

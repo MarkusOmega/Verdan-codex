@@ -1,8 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.btn {
+  @apply font-bold py-2 px-4 rounded;
+}
+
+.btn-blue {
+  @apply bg-blue-500 text-white;
+}
+
+.btn-blue:hover {
+  @apply bg-blue-700;
+}
+
 .table-w100 {
   width: 100%;
+}
+.table-w100 thead {
+  border-bottom: 1px solid black;
+}
+.table-w100 thead th {
+  padding: 10px;
+}
+.table-w100 tbody tr td {
+  padding: 10px;
+}
+.table-w100.striped tbody tr:nth-child(even) td {
+  background-color: #e7eaee;
 }
 
 /*# sourceMappingURL=app.css.map */
