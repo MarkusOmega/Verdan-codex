@@ -13,7 +13,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware(['can:edit_user'])->group(function () {
-    Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    Route::resource('users', UserController::class);
 });
 
 

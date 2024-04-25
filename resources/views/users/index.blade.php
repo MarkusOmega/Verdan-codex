@@ -9,7 +9,8 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                   <table class="table-w100 striped" id="user-table">
+                   <span class="btn btn-blue"> {{ __('Create User +') }}</span>
+                    <table class="table-w100 striped" id="user-table">
                        <thead class="border-bottom border-bottom-1">
                        <tr>
                            <th>#</th>
@@ -35,7 +36,14 @@
                                         test
                                     </td>
                                     <td>
-                                        <span class="btn btn-blue">Edit</span>
+                                        @if(isset($user->active) && $user->active)
+                                            <a href="#" class="btn btn-green">Active</a>
+                                        @else
+                                            <a href="#" class="btn btn-gray">Inactive</a>
+                                        @endif
+
+                                        <a href="{{ route('users.edit', ['user' => $user]) }}" class="btn btn-blue">Edit</a>
+                                        <a href="#" class="btn btn-red">Delete</a>
                                     </td>
                                 </tr>
                            @endforeach

@@ -1,9 +1,44 @@
 .btn {
     @apply font-bold py-2 px-4 rounded;
 }
+
+// Green
+.btn-green {
+    @apply bg-green-500 text-white;
+}
+.btn-green:hover {
+    @apply bg-green-700;
+}
+
+// Blue
 .btn-blue {
     @apply bg-blue-500 text-white;
 }
 .btn-blue:hover {
     @apply bg-blue-700;
 }
+
+// Orange
+.btn-orange {
+    @apply bg-orange-500 text-white;
+}
+.btn-orange:hover {
+    @apply bg-orange-700;
+}
+
+// Red
+.btn-red {
+    @apply bg-red-500 text-white;
+}
+.btn-red:hover {
+    @apply bg-red-700;
+}
+
+// Grey
+.btn-gray {
+    @apply bg-gray-500 text-gray-300;
+}
+.btn-gray:hover {
+    @apply bg-gray-700;
+}
+
