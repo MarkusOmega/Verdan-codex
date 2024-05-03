@@ -7,7 +7,7 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="card">
                 <div class="p-6 text-gray-900">
                     {{ html()->form('PUT', route('users.update', compact('user')))->open() }}
 
@@ -24,6 +24,10 @@
                         {{ html()->email('email')->placeholder('Your e-mail address')->class('form-field-input') }}
                     </div>
                     <div class="mb-4">
+                        {{ html()->label('Password')->for('password')->class('form-field-label') }}
+                        {{ html()->password('password')->placeholder('Set new password')->class('form-field-input') }}
+                    </div>
+                    <div class="mb-4">
                         {{ html()->label('Active')->for('active')->class('form-field-label') }}
                         {{ html()->checkbox('active')->class('form-field-checkbox') }}
                     </div>
@@ -37,4 +41,9 @@
             </div>
         </div>
     </div>
+
+    @include('subscriptions.type')
+
+    @include('subscriptions.mutations')
+
 </x-app-layout>

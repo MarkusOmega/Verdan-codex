@@ -12,7 +12,8 @@ Route::get('/dashboard', function () {
     return view('admin.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware(['can:edit_user'])->group(function () {
+// USER CRUD
+Route::middleware(['auth','can:edit_user'])->group(function () {
     Route::resource('users', UserController::class);
 });
 
