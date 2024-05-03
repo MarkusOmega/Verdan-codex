@@ -15,6 +15,9 @@ Route::get('/dashboard', function () {
 // USER CRUD
 Route::middleware(['auth','can:edit_user'])->group(function () {
     Route::resource('users', UserController::class);
+
+    Route::get('/{user}/deactivate', [UserController::class, 'Deactivate'])->name('users.deactivate');
+    Route::get('/{user}/activate', [UserController::class, 'Activate'])->name('users.activate');
 });
 
 

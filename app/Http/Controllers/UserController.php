@@ -27,7 +27,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('users.create');
     }
 
     /**
@@ -84,6 +84,23 @@ class UserController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+       User::destroy($id);
     }
+
+    public function Activate(User $user)
+    {
+        $user->active = 1;
+        $user->save();
+
+        return redirect()->back();
+    }
+
+    public function Deactivate(User $user)
+    {
+        $user->active = 0;
+        $user->save();
+
+        return redirect()->back();
+    }
+
 }

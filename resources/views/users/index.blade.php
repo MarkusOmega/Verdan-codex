@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                   <span class="btn btn-blue"> {{ __('Create User +') }}</span>
+                   <a href="{{ route('users.create') }}" class="btn btn-blue"> {{ __('Create User +') }}</a>
                     <table class="table-w100 striped" id="user-table">
                        <thead class="border-bottom border-bottom-1">
                        <tr>
@@ -37,9 +37,9 @@
                                     </td>
                                     <td>
                                         @if(isset($user->active) && $user->active)
-                                            <a href="#" class="btn btn-green">Active</a>
+                                            <a href="{{ route('users.deactivate', ['user' => $user]) }}" class="btn btn-green">active</a>
                                         @else
-                                            <a href="#" class="btn btn-gray">Inactive</a>
+                                            <a href="{{ route('users.activate', ['user' => $user]) }}" class="btn btn-gray">Inactive</a>
                                         @endif
 
                                         <a href="{{ route('users.edit', ['user' => $user]) }}" class="btn btn-blue">Edit</a>
