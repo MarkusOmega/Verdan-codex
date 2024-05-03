@@ -33,7 +33,7 @@
                                         {{ $user->email }}
                                     </td>
                                     <td>
-                                        test
+                                        {{ trans('subscriptions.'.$user->subscription->subscriptionType->name) }}
                                     </td>
                                     <td>
                                         @if(isset($user->active) && $user->active)

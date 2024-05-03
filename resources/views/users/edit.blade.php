@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('User') .': '. __('edit') }}
+            {{ __('User') .':  '. __('edit') }}
         </h2>
     </x-slot>
 
@@ -42,7 +42,7 @@
         </div>
     </div>
 
-    @include('subscriptions.type')
+    @include('subscriptions.type', compact('user'))
 
     @include('subscriptions.mutations')
 

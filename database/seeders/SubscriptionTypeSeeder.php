@@ -22,7 +22,7 @@ class SubscriptionTypeSeeder extends Seeder
 
         //Paid player
         Subscription_type::create([
-            'name' => 'Paid_player',
+            'name' => 'paid_player',
             'price' => 15, // euro's
             'duration' => 12, // months
         ]);
@@ -36,7 +36,7 @@ class SubscriptionTypeSeeder extends Seeder
 
         //Paid dm
         Subscription_type::create([
-            'name' => 'Paid_dm',
+            'name' => 'paid_dm',
             'price' => 15, // euro's
             'duration' => 12, // months
         ]);
