@@ -43,7 +43,16 @@
                                         @endif
 
                                         <a href="{{ route('users.edit', ['user' => $user]) }}" class="btn btn-blue">Edit</a>
-                                        <a href="#" class="btn btn-red">Delete</a>
+
+                                            <button
+                                                type="button"
+                                                class="btn btn-red"
+                                                data-twe-toggle="modal"
+                                                data-twe-target="#ModalUsers"
+                                                data-twe-ripple-init
+                                                data-twe-ripple-color="light">
+                                                Delete
+                                            </button>
                                     </td>
                                 </tr>
                            @endforeach
@@ -53,4 +62,10 @@
             </div>
         </div>
     </div>
+    <x-tw-modal>
+        <x-slot:title> delete user</x-slot:title>
+
+        <x-slot:type> delete</x-slot:type>
+    </x-tw-modal>
+
 </x-app-layout>
