@@ -13,7 +13,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 // USER CRUD
-Route::middleware(['auth','can:edit_user'])->group(function () {
+Route::middleware(['auth','can:view_user'])->group(function () {
     Route::resource('users', UserController::class);
 
     Route::get('/{user}/deactivate', [UserController::class, 'Deactivate'])->name('users.deactivate');

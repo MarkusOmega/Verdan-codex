@@ -14,7 +14,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::whereHas('roles', function($query){
+         $users = User::whereHas('roles', function($query){
             $query->whereNot('id', '1')
                 ->whereNot('id', '2');
         })->get();
