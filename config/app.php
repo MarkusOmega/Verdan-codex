@@ -123,15 +123,16 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Providers
-    |--------------------------------------------------------------------------
-    |
-     */
-    'providers' => [
-        // ...
+//    /*
+//    |--------------------------------------------------------------------------
+//    | Providers
+//    |--------------------------------------------------------------------------
+//    |
+//     */
+    'providers' => \Illuminate\Support\ServiceProvider::defaultProviders()->merge([
         Lab404\Impersonate\ImpersonateServiceProvider::class,
-    ],
+    ])->toArray(),
+
+
 
 ];

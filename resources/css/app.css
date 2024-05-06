@@ -1,6 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.col-gap-12 {
+  column-gap: 12px;
+}
+
 .btn {
   @apply font-bold py-2 px-4 rounded;
 }

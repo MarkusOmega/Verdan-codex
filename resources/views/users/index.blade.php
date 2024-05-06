@@ -35,7 +35,7 @@
                                     <td>
                                         {{ trans('subscriptions.'.$user->subscription->subscriptionType->name) }}
                                     </td>
-                                    <td>
+                                    <td class="flex-end col-gap-12">
                                         @if(isset($user->active) && $user->active)
                                             <a href="{{ route('users.deactivate', ['user' => $user]) }}" class="btn btn-green">active</a>
                                         @else
@@ -44,15 +44,18 @@
 
                                         <a href="{{ route('users.edit', ['user' => $user]) }}" class="btn btn-blue">Edit</a>
 
-                                            <button
-                                                type="button"
-                                                class="btn btn-red"
-                                                data-twe-toggle="modal"
-                                                data-twe-target="#ModalUsers"
-                                                data-twe-ripple-init
-                                                data-twe-ripple-color="light">
-                                                Delete
-                                            </button>
+                                            <form wire:submit="deleteUser">
+                                                <input type="hidden" id="userId" wire:model="userId">
+
+                                                <button type="submit"
+                                                        class="btn btn-red"
+                                                  >
+                                                    Save
+                                                </button>
+                                            </form>
+
+                                            <a href="{{ route('users.impersonate', ['user' => $user]) }}" class="btn btn-orange">Impersonate</a>
+
                                     </td>
                                 </tr>
                            @endforeach
@@ -62,10 +65,11 @@
             </div>
         </div>
     </div>
-    <x-tw-modal>
-        <x-slot:title> delete user</x-slot:title>
 
-        <x-slot:type> delete</x-slot:type>
-    </x-tw-modal>
+    {{--    <x-tw-modal>--}}
+{{--        <x-slot:title> delete user</x-slot:title>--}}
+
+{{--        <x-slot:type> delete</x-slot:type>--}}
+{{--    </x-tw-modal>--}}
 
 </x-app-layout>

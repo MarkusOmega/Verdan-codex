@@ -17,7 +17,7 @@ class UserController extends Controller
          $users = User::whereHas('roles', function($query){
             $query->whereNot('id', '1')
                 ->whereNot('id', '2');
-        })->get();
+        })->paginate('25');
 
         return view('users.index', compact('users'));
     }
@@ -87,7 +87,7 @@ class UserController extends Controller
        User::destroy($id);
     }
 
-    public function Activate(User $user)
+    public function activate(User $user)
     {
         $user->active = 1;
         $user->save();
@@ -95,7 +95,7 @@ class UserController extends Controller
         return redirect()->back();
     }
 
-    public function Deactivate(User $user)
+    public function deactivate(User $user)
     {
         $user->active = 0;
         $user->save();
@@ -103,4 +103,10 @@ class UserController extends Controller
         return redirect()->back();
     }
 
+    public function impersonate(User $user) {
+
+        Auth::user()->impersonate($user);
+
+        return redirect('/');
+    }
 }

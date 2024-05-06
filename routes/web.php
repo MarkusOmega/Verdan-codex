@@ -13,11 +13,16 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 // USER CRUD
-Route::middleware(['auth','can:view_user'])->group(function () {
+Route::middleware(['can:view_user'])->group(function () {
     Route::resource('users', UserController::class);
 
-    Route::get('/{user}/deactivate', [UserController::class, 'Deactivate'])->name('users.deactivate');
-    Route::get('/{user}/activate', [UserController::class, 'Activate'])->name('users.activate');
+    Route::get('/{user}/deactivate', [UserController::class, 'deactivate'])->name('users.deactivate');
+    Route::get('/{user}/activate', [UserController::class, 'activate'])->name('users.activate');
+
+});
+
+Route::middleware(['can:impersonate_user'])->group(function () {
+    Route::get('/{user}/impersonate', [UserController::class, 'impersonate'])->name('users.impersonate');
 });
 
 

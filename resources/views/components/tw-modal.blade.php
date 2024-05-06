@@ -16,7 +16,7 @@
                 <h5
                     class="text-xl font-medium leading-normal text-surface dark:text-white"
                     id="exampleModalLabel">
-                        {{ $title }}
+{{--                        {{ $title }}--}}
                 </h5>
                 <button
                     type="button"
