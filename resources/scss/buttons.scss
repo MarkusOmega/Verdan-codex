@@ -5,40 +5,50 @@
 // Green
 .btn-green {
     @apply bg-green-500 text-white;
+    cursor: pointer;
 }
 .btn-green:hover {
     @apply bg-green-700;
+    cursor: pointer;
 }
 
 // Blue
 .btn-blue {
     @apply bg-blue-500 text-white;
+    cursor: pointer;
 }
 .btn-blue:hover {
     @apply bg-blue-700;
+    cursor: pointer;
 }
 
 // Orange
 .btn-orange {
     @apply bg-orange-500 text-white;
+    cursor: pointer;
 }
 .btn-orange:hover {
     @apply bg-orange-700;
+    cursor: pointer;
 }
 
 // Red
 .btn-red {
     @apply bg-red-500 text-white;
+    cursor: pointer;
 }
 .btn-red:hover {
     @apply bg-red-700;
+    cursor: pointer;
 }
 
 // Grey
 .btn-gray {
     @apply bg-gray-500 text-gray-300;
+    cursor: pointer;
 }
 .btn-gray:hover {
     @apply bg-gray-700;
+    cursor: pointer;
 }
 

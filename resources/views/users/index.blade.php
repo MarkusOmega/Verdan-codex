@@ -7,6 +7,9 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+
+            <x-message> </x-message>
+
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                    <a href="{{ route('users.create') }}" class="btn btn-blue"> {{ __('Create User +') }}</a>
@@ -44,18 +47,10 @@
 
                                         <a href="{{ route('users.edit', ['user' => $user]) }}" class="btn btn-blue">Edit</a>
 
-                                            <form wire:submit="deleteUser">
-                                                <input type="hidden" id="userId" wire:model="userId">
-
-                                                <button type="submit"
-                                                        class="btn btn-red"
-                                                  >
-                                                    Save
-                                                </button>
-                                            </form>
-
-                                            <a href="{{ route('users.impersonate', ['user' => $user]) }}" class="btn btn-orange">Impersonate</a>
-
+                                        @if(auth()->user()->can('delete_user'))
+                                            @livewire('deleteUser', ['user' => $user])
+                                        @endif
+                                        <a href="{{ route('users.impersonate', ['user' => $user]) }}" class="btn btn-orange">Impersonate</a>
                                     </td>
                                 </tr>
                            @endforeach
